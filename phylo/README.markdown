@@ -91,7 +91,7 @@ Methods:
 Citations:
 ==========
 
-    Seo et al. Incorporating gene-specific variation when inferring and evaluating optimal evolutionary tree topologies from multilocus sequence data. Proc. Natl. Acad. Sci. U.S.A. (2005) vol. 102 (12) pp. 4436-41
+Seo et al. Incorporating gene-specific variation when inferring and evaluating optimal evolutionary tree topologies from multilocus sequence data. Proc. Natl. Acad. Sci. U.S.A. (2005) vol. 102 (12) pp. 4436-41
     
-    Seo. Calculating bootstrap probabilities of phylogeny using multilocus sequence data. Mol. Biol. Evol. (2008) vol. 25 (5) pp. 960-71
+Seo. Calculating bootstrap probabilities of phylogeny using multilocus sequence data. Mol. Biol. Evol. (2008) vol. 25 (5) pp. 960-71
     
