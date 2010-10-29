@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # seqcap - initial thoughts
 
 This repository holds computer code used as part of McCormack et al. XXXX.
