@@ -168,7 +168,7 @@ project, I (BCF) also started to better follow
 notice.  Nick Crawford (NGC) was better about following PEP8 than I.
 
 You will also notice, should you scrutinize the code, that some programs write
-to an sqlite database while other write to a mysql database.  The reasons for
+to an sqlite database while others write to a mysql database.  The reasons for
 this additional level of complexity are several-fold.  Generally speaking, we
 started using sqlite as the initial database for holding data generated as
 part of this project, but we moved to mysql when demands for concurrency
@@ -179,13 +179,13 @@ Three additional notes:
 
 1. we have moved the code within this repository here from a private repository
    that I (BCF) maintain for the development portions of this project.  You
-   should generally be happy about this, beacuse it has allowed use to do
+   should generally be happy about this, beacuse it has allowed us to do
    a fair amount of housekeeping.  If you believe a program is missing that
    may be in this private repository, please let me know, and I'll attempt to
    move it over.
 
-2. we have an updated workflow for a number of the steps detailed below
-   (particularly the initial steps of UCE location and probe design.  when the
+2. we have an updated workflow for a number of the steps detailed below,
+   particularly the initial steps of UCE location and probe design.  When the
    time comes, we will tag pertinent files in the current repo, and then move
    in the new bits.
 
@@ -196,9 +196,11 @@ Three additional notes:
    with knowledge of [Python](http://www.python.org) to aid this process.
 
 
-## acknowledgments
+## Acknowledgments
 
 We thank the [UCSC genome browser](http://genome.ucsc.edu), in particular, for
 being an awesome resource that enables much of the work within.  We also thank
 all of the organizations that have made genomic sequences available for the
-many organisms we've used as part of this and other work.
+many organisms we've used as part of this and other work.  Lastly, we should thank
+[github](http://github.com) for easing what otherwise would have been a complicated
+collaboration. 
