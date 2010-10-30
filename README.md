@@ -1,65 +1,15 @@
-# seqcap - initial thoughts
-
-This repository holds computer code used as part of McCormack et al. XXXX.
+This repository holds computer code (and, temporarily, data) used as part of
+McCormack et al. XXXX.
 
 [CITE]
 
-There are a very large number of independent programs and interdependent
-programs within.  You will notice, likely at first glance, that some of the
-code seems all over the place (style-wise).  That's because, to some degree, it
-is.  We began this project during 2008, and it has stretched to the present.
+There are a large number of independent and interdependent programs within this
+repository.  The fruits of these programs labor are found in the **Downloads**
+as described below.  Since many people are mostly interested in these data, we
+describe them first.
 
-There are several programs that were use-once-and-forget, and others that
-became indispensable or are newer/prettier/better/etc. I would say, too, that
-you can see some evolution in the code itself.  About 3/4 of the way into the
-project, I (BCF) also started to better follow
-[PEP8](http://www.python.org/dev/peps/pep-0008/) which you'll also likely
-notice.  Nick Crawford (NGC) was better about following PEP8 than I.
-
-You will also notice, should you scrutinize the code, that some programs write
-to an sqlite database while other write to a mysql database.  The reasons for
-this additional level of complexity are several-fold.  Generally speaking, we
-started using sqlite as the initial database for holding data generated as
-part of this project, but we moved to mysql when demands for concurrency
-required that we use a database supporting concurrent writes (sqlite does
-not).
-
-Three additional notes:  
-
-1. we have moved the code within this repository here from a private repository
-   that I (BCF) maintain for the development portions of this project.  You
-   should generally be happy about this, beacuse it has allowed use to do
-   a fair amount of housekeeping.  If you believe a program is missing that
-   may be in this private repository, please let me know, and I'll attempt to
-   move it over.
-
-2. we have an updated workflow for a number of the steps detailed below
-   (particularly the initial steps of UCE location and probe design.  when the
-   time comes, we will tag pertinent files in the current repo, and then move
-   in the new bits.
-
-3. some of the methods/code within are likely confusing to others, particularly
-   if you are trying to piece together what we did without actually reading the
-   code.  For the most part, we'll try to give you some guidance, but
-   you'll also need to read the code.  It may be helpful to enlist someone
-   with knowledge of [Python](http://www.python.org) to aid this process.
-
-
-## code
-
-The code is available at http://github.com/BadDNA/seqcap/.  This file is the
-top-level README.
-
-
-## workflow
-
-We provide a general overview of the overall workflow in WORKFLOW.md.  We also
-provide task-specific workflows in:
-
-* x
-* y
-* z
-
+There is more documentation, including details on workflow, the purpose of
+specific programs, etc. in the documentation:  []()
 
 ## data
 
@@ -200,6 +150,50 @@ largely been automated in `Future/run_mutiple_lastz.py`.  the tables are:
 * `venter`
 * `vicPac1`
 * `xenTro2`
+
+## code
+
+The code is available at http://github.com/BadDNA/seqcap/.  This file is the
+top-level README.
+
+You will notice, likely at first glance, that some of the code seems all over
+the place (style-wise).  That's because, to some degree, it is.  We began this
+project during 2008, and it has stretched to the present.
+
+There are several programs that were use-once-and-forget, and others that
+became indispensable or are newer/prettier/better/etc. I would say, too, that
+you can see some evolution in the code itself.  About 3/4 of the way into the
+project, I (BCF) also started to better follow
+[PEP8](http://www.python.org/dev/peps/pep-0008/) which you'll also likely
+notice.  Nick Crawford (NGC) was better about following PEP8 than I.
+
+You will also notice, should you scrutinize the code, that some programs write
+to an sqlite database while other write to a mysql database.  The reasons for
+this additional level of complexity are several-fold.  Generally speaking, we
+started using sqlite as the initial database for holding data generated as
+part of this project, but we moved to mysql when demands for concurrency
+required that we use a database supporting concurrent writes (sqlite does
+not).
+
+Three additional notes:  
+
+1. we have moved the code within this repository here from a private repository
+   that I (BCF) maintain for the development portions of this project.  You
+   should generally be happy about this, beacuse it has allowed use to do
+   a fair amount of housekeeping.  If you believe a program is missing that
+   may be in this private repository, please let me know, and I'll attempt to
+   move it over.
+
+2. we have an updated workflow for a number of the steps detailed below
+   (particularly the initial steps of UCE location and probe design.  when the
+   time comes, we will tag pertinent files in the current repo, and then move
+   in the new bits.
+
+3. some of the methods/code within are likely confusing to others, particularly
+   if you are trying to piece together what we did without actually reading the
+   code.  For the most part, we'll try to give you some guidance, but
+   you'll also need to read the code.  It may be helpful to enlist someone
+   with knowledge of [Python](http://www.python.org) to aid this process.
 
 
 ## acknowledgments
