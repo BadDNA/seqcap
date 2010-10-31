@@ -10,6 +10,18 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   introduction.rst
+   data.rst
+   workflow.rst
+   alignment.rst
+   clustering.rst
+   design.rst
+   genome.rst
+   lib.rst
+   phylo.rst
+   acknowledgements.rst
+   references.rst
 
 Indices and tables
 ==================
