@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Data &mdash; uce v0.5 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="uce v0.5 documentation" href="index.html" />
+    <link rel="next" title="Workflow" href="workflow.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="workflow.html" title="Workflow"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="data">
+<span id="id1"></span><h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<p>We make a number of data files available (temporarily) on this site.  The data files are as follows.</p>
+<div class="section" id="uce-probe-sqlite-bz2">
+<h2>uce_probe.sqlite.bz2<a class="headerlink" href="#uce-probe-sqlite-bz2" title="Permalink to this headline">¶</a></h2>
+<p>This is a bzip archive of an sqlite database containing the data we used during our probe design process and the probes that results from this process.  The tables are:</p>
+<ul class="simple">
+<li><strong>cons</strong> - this table contains matches that we identified in alignments
+(<a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format5">MAF</a>) between chicken and
+lizard using the initial version (0.1) of the <a href="#id2"><span class="problematic" id="id3">`</span></a>genome/summary.py`code in
+this repository (see &#8220;tags&#8221; below).</li>
+<li><strong>blast</strong> - this table contains results from a blast of the matches from      cons onto the zebra finch genome.  For these matches we used the 0.1 tagged <cite>genome/summaryBlast.py</cite> code</li>
+<li><strong>gallus_refseq</strong> - this is a table of the refseq genes in galGal3.  it would
+likely be best to download a recent version of these data from NCBI or UCSC
+rather than using what is here for anything.</li>
+<li><strong>probes</strong> - this is a table of the probes that we designed from the UCEs we
+located in chicken, lizard, and zebra finch.  We designed these probes using
+<a href="#id4"><span class="problematic" id="id5">`</span></a>design/sure_select_tiler.py</li>
+</ul>
+</div>
+<div class="section" id="uce-bed-bz2">
+<h2>uce_bed.bz2<a class="headerlink" href="#uce-bed-bz2" title="Permalink to this headline">¶</a></h2>
+<p>This is a <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format1">BED</a> format file of the UCEs we located that are shared between chicken, lizard, and zebra finch. The locations within this file are relative to chicken (galGal3).</p>
+</div>
+<div class="section" id="uce-probes-bed-bz2">
+<h2>uce_probes.bed.bz2<a class="headerlink" href="#uce-probes-bed-bz2" title="Permalink to this headline">¶</a></h2>
+<p>This is a <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format1">BED</a> format file of
+the locations of the probes we designed.  The locations within this file are
+relative to chicken (galGal3).</p>
+</div>
+<div class="section" id="probe-matches-to-other-genomes-sql-bz2">
+<h2>probe_matches_to_other_genomes.sql.bz2<a class="headerlink" href="#probe-matches-to-other-genomes-sql-bz2" title="Permalink to this headline">¶</a></h2>
+<p>This is a bzipped dump file of the <a class="reference external" href="http://www.mysql.com/">mysql</a> database
+in which we stored our alignments of each probe sequence to other genomes.
+Initially and for error checking purposes, we conducted the align, clean, and
+insert steps by hand (as seen in <em class="xref std std-ref">Simulation:steps</em>).  This process has
+now largely been automated in <em class="xref std std-ref">future:run_mutiple_lastz.py</em>.  The tables are:</p>
+<div class="section" id="group-data-tables">
+<span id="id7"></span><h3>group data tables<a class="headerlink" href="#group-data-tables" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><cite>all_orgs</cite> - this table contains data from all of the matches to individual
+species listed in <a class="reference internal" href="#individual-species"><em>probe matches to individual species</em></a></p>
+</li>
+<li><p class="first"><cite>cons</cite> - this table is identical to the <cite>cons</cite> table from uce_probe.sqlite.  it
+is repeated here for ease of use</p>
+</li>
+<li><p class="first"><cite>group_XAB_5</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>monDom5</li>
+<li>loxAfr3</li>
+<li>choHof1</li>
+<li>hg19</li>
+<li>mm9</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_Bats_5</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>eriEur1</li>
+<li>equCab2</li>
+<li>bosTau4</li>
+<li>canFam2</li>
+<li>pteVam1</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_Bats_7</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>eriEur1</li>
+<li>equCab2</li>
+<li>bosTau4</li>
+<li>canFam2</li>
+<li>pteVam1</li>
+<li>myoLuc1</li>
+<li>ailMel1</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_Bats_8</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>eriEur1</li>
+<li>pteVam1</li>
+<li>myoLuc1</li>
+<li>bosTau4</li>
+<li>vicPac1</li>
+<li>equCab2</li>
+<li>canFam2</li>
+<li>ailMel1</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_Bats_12</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>eriEur1</li>
+<li>pteVam1</li>
+<li>myoLuc1</li>
+<li>bosTau4</li>
+<li>vicPac1</li>
+<li>susScr9</li>
+<li>oviAri1</li>
+<li>turTru1</li>
+<li>equCab2</li>
+<li>canFam2</li>
+<li>felCat3</li>
+<li>ailMel1</li>
+</ul>
+</blockquote>
+</li>
+<li><dl class="first docutils">
+<dt><cite>group_elephants_7</cite> - this contains the list of probes found in all members of</dt>
+<dd><ul class="first last simple">
+<li>loxAfr3</li>
+<li>canFam2</li>
+<li>echTel1</li>
+<li>choHof1</li>
+<li>dasNov2</li>
+<li>hg19</li>
+<li>monDom5</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><cite>group_size_19</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>anoCar2</li>
+<li>bosTau4</li>
+<li>calJac3</li>
+<li>canFam2</li>
+<li>cavPor3</li>
+<li>chinese</li>
+<li>equCab2</li>
+<li>gorGor3</li>
+<li>hg19</li>
+<li>korean</li>
+<li>loxAfr3</li>
+<li>mm9</li>
+<li>monDom5</li>
+<li>oryCun2</li>
+<li>panTro2</li>
+<li>ponAbe2</li>
+<li>rheMac2</li>
+<li>taeGut1</li>
+<li>venter</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_size_23</cite> - this contains the list of probes found in all memebrs of</p>
+<blockquote>
+<ul class="simple">
+<li>bosTau4</li>
+<li>canFam2</li>
+<li>cavPor3</li>
+<li>chinese</li>
+<li>dasNov2</li>
+<li>echTel1</li>
+<li>equCab2</li>
+<li>gorGor3</li>
+<li>hg19</li>
+<li>korean</li>
+<li>loxAfr3</li>
+<li>mm9</li>
+<li>monDom5</li>
+<li>ochPri2</li>
+<li>oryCun2</li>
+<li>panTro2</li>
+<li>ponAbe2</li>
+<li>pteVam1</li>
+<li>rn4</li>
+<li>speTri1</li>
+<li>tarSyr1</li>
+<li>tupBel1</li>
+<li>venter</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_size_25</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>anoCar2</li>
+<li>bosTau4</li>
+<li>calJac3</li>
+<li>canFam2</li>
+<li>cavPor3</li>
+<li>chinese</li>
+<li>dipOrd1</li>
+<li>equCab2</li>
+<li>gorGor3</li>
+<li>hg19</li>
+<li>korean</li>
+<li>loxAfr3</li>
+<li>mm9</li>
+<li>monDom5</li>
+<li>ornAna1</li>
+<li>oryCun2</li>
+<li>panTro2</li>
+<li>ponAbe2</li>
+<li>pteVam1</li>
+<li>rheMac2</li>
+<li>rn4</li>
+<li>taeGut1</li>
+<li>tarSyr1</li>
+<li>venter</li>
+<li>vicPac1</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>group_size_29</cite> - this contains the list of probes found in all members of</p>
+<blockquote>
+<ul class="simple">
+<li>anoCar2</li>
+<li>bosTau4</li>
+<li>calJac3</li>
+<li>canFam2</li>
+<li>cavPor3</li>
+<li>chinese</li>
+<li>choHof1</li>
+<li>dipOrd1</li>
+<li>echTel1</li>
+<li>equCab2</li>
+<li>eriEur1</li>
+<li>gorGor3</li>
+<li>hg19</li>
+<li>korean</li>
+<li>loxAfr3</li>
+<li>mm9</li>
+<li>monDom5</li>
+<li>ornAna1</li>
+<li>oryCun2</li>
+<li>panTro2</li>
+<li>ponAbe2</li>
+<li>pteVam1</li>
+<li>rheMac2</li>
+<li>rn4</li>
+<li>taeGut1</li>
+<li>tarSyr1</li>
+<li>tupBel1</li>
+<li>venter</li>
+<li>vicPac1</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><cite>probe_distribution</cite> - this contains a binary &#8220;matrix&#8221; indicating
+presence/absence (1/0) of probe matches by species</p>
+</li>
+<li><p class="first"><cite>probes</cite> - this is a table providing the ids of the probes we designed</p>
+</li>
+<li><p class="first"><cite>species</cite> - this table provides information on the genome build of each
+organism to which we aligned probes</p>
+</li>
+<li><p class="first"><cite>sureselect</cite> - this table is identical to the <cite>probes</cite> table from
+uce_probe.sqlite</p>
+</li>
+</ul>
+</div>
+<div class="section" id="probe-matches-to-individual-species">
+<span id="individual-species"></span><h3>probe matches to individual species<a class="headerlink" href="#probe-matches-to-individual-species" title="Permalink to this headline">¶</a></h3>
+<p>These tables provide the individual matches of probes to difference organisms, as found by using lastz to align our probe sequences to the individual genomes.  We provide the build version, name, etc. of each genome sequence in the <em>species</em> table of the database dump described in <a class="reference internal" href="#group-data-tables"><em>group data tables</em></a>.</p>
+<ul class="simple">
+<li><cite>ailMel1</cite></li>
+<li><cite>anoCar2</cite></li>
+<li><cite>bosTau4</cite></li>
+<li><cite>calJac3</cite></li>
+<li><cite>canFam2</cite></li>
+<li><cite>cavPor3</cite></li>
+<li><cite>chinese</cite></li>
+<li><cite>choHof1</cite></li>
+<li><cite>danRer6</cite></li>
+<li><cite>dasNov2</cite></li>
+<li><cite>dipOrd1</cite></li>
+<li><cite>echTel1</cite></li>
+<li><cite>equCab2</cite></li>
+<li><cite>eriEur1</cite></li>
+<li><cite>felCat3</cite></li>
+<li><cite>gasAcu1</cite></li>
+<li><cite>gorGor3</cite></li>
+<li><cite>hg19</cite></li>
+<li><cite>korean</cite></li>
+<li><cite>loxAfr3</cite></li>
+<li><cite>macEug1</cite></li>
+<li><cite>micMur1</cite></li>
+<li><cite>mm9</cite></li>
+<li><cite>monDom5</cite></li>
+<li><cite>myoLuc1</cite></li>
+<li><cite>ochPri2</cite></li>
+<li><cite>ornAna1</cite></li>
+<li><cite>oryCun2</cite></li>
+<li><cite>otoGar1</cite></li>
+<li><cite>oviAri1</cite></li>
+<li><cite>panTro2</cite></li>
+<li><cite>ponAbe2</cite></li>
+<li><cite>proCap1</cite></li>
+<li><cite>pteVam1</cite></li>
+<li><cite>rheMac2</cite></li>
+<li><cite>rn4</cite></li>
+<li><cite>sorAra1</cite></li>
+<li><cite>speTri1</cite></li>
+<li><cite>susScr9</cite></li>
+<li><cite>taeGut1</cite></li>
+<li><cite>tarSyr1</cite></li>
+<li><cite>tetNig1</cite></li>
+<li><cite>tupBel1</cite></li>
+<li><cite>turTru1</cite></li>
+<li><cite>venter</cite></li>
+<li><cite>vicPac1</cite></li>
+<li><cite>xenTro2</cite></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Data</a><ul>
+<li><a class="reference internal" href="#uce-probe-sqlite-bz2">uce_probe.sqlite.bz2</a></li>
+<li><a class="reference internal" href="#uce-bed-bz2">uce_bed.bz2</a></li>
+<li><a class="reference internal" href="#uce-probes-bed-bz2">uce_probes.bed.bz2</a></li>
+<li><a class="reference internal" href="#probe-matches-to-other-genomes-sql-bz2">probe_matches_to_other_genomes.sql.bz2</a><ul>
+<li><a class="reference internal" href="#group-data-tables">group data tables</a></li>
+<li><a class="reference internal" href="#probe-matches-to-individual-species">probe matches to individual species</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="workflow.html"
+                        title="next chapter">Workflow</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/data.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="workflow.html" title="Workflow"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

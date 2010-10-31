@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; uce v0.5 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="uce v0.5 documentation" href="index.html" />
+    <link rel="next" title="Data" href="data.html" />
+    <link rel="prev" title="Welcome to uce’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to uce’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<span id="chap-introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This <a class="reference external" href="http://github.com/baddna/seqcap">repository</a>) holds computer code (and, temporarily, data) used as part of [McCormack:20??]_.</p>
+<p>In essence, the software included within the repository are meant to:</p>
+<ol class="arabic simple">
+<li>identify ultra-conserved regions of genomic DNA (AKA ultra-conserved elements or UCEs) in [vertebrate] organisms</li>
+<li>design <em>in silico</em> (or <em>in vitro</em>) &#8220;probes&#8221; for the enrichment of UCEs</li>
+<li>align <em>in silico</em> probes to genomic DNA of numerous sources and extract those reads + some flanking DNA</li>
+<li>cluster <em>in silico</em> probes + flanking sequence from individual species into &#8220;loci&#8221; representing entire UCEs.  We can easily translate this step to an <em>in vitro</em> approach by clustering reads we derive from target enrichment where the enriching agents are the probes designed above - then we just need cluster these probes + reads into the corresponding UCEs from which they were derived.</li>
+<li>align, across species, UCE &#8220;loci&#8221; from above</li>
+<li>generate gene trees from these inter-species alignments (using PhyML)</li>
+<li>generate the species trees from individual gene trees (using STAR, STEAC, or MP-EST)</li>
+</ol>
+<p>Because of the complex nature of the above steps, there are a number of independent and interdependent programs within this repository, that we hopefully better explain in <em class="xref std std-ref">workflow</em>. The fruits of these programs labor are found in the <a class="reference external" href="http://github.com/BadDNA/seqcap/archives/master">Downloads</a> as described in the <a class="reference internal" href="data.html#data"><em>Data</em></a> section. Since many people are mostly interested in these data, we discuss these data first.</p>
+<div class="section" id="notes-on-the-code">
+<span id="id1"></span><h2>Notes on the Code<a class="headerlink" href="#notes-on-the-code" title="Permalink to this headline">¶</a></h2>
+<p>The code is available at <a class="reference external" href="http://github.com/baddna/seqcap">http://github.com/baddna/seqcap</a>.</p>
+<p>We are in the process of cleaning and standardizing the code, while also increasing the available documentation for the code - both in the source files and here, in the documentation.  Additionally, we have made incremental improvements to a number of routines used herein, and we will be merging these changes into this repository after the initial commit and tagging of files (see <a class="reference internal" href="#tagging"><em>Tagging</em></a>).</p>
+<p>You will notice, should you scrutinize the code, that some programs write to an <a class="reference external" href="http://www.sqlite.org/">sqlite</a> database while others write to a <a class="reference external" href="http://www.mysql.com/">mysql</a> database. The reasons for this additional level of complexity are several-fold. Generally speaking, we started using sqlite as the initial database for holding data generated as part of this project, but we moved to mysql when we decided that we needed a greater level of concurrency (sqlite does not support concurrent <strong>writes</strong>.</p>
+<p>As we incrementally improve individual files, we will make the switch to mysql-only (or <a class="reference external" href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>, which should be more generic) support.</p>
+<p>In the development version of the code (currently a private repository - see <a class="reference internal" href="#additional-notes"><em>Additional Notes</em></a>) we have also replaced slower external dependencies (e.g. <a class="reference external" href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</a>) with similar, yet speedier alternatives (e.g. <a class="reference external" href="http://www.bx.psu.edu/~rsharris/lastz/">lastz</a>)</p>
+</div>
+<div class="section" id="additional-notes">
+<span id="id2"></span><h2>Additional Notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>we have moved the code within this repository here from a private repository that I (BCF) maintain for development. You should generally be happy about this, because it has allowed us to do a fair amount of housekeeping. It also allows us to work on some things that we may not want everyone to know about (yet!).  However, if you believe a program is missing that may be in this private repository, please let me know, and I&#8217;ll attempt to move it over.  <strong>Eventually, we plan to move all code to this repository, and remove the private repository</strong>.  At that point, we will develop from within this repository.  The downside of this approach is that we will lose some history information of particular pieces of code.</li>
+<li>we have an updated workflow for a number of the steps detailed below (particularly the initial steps of UCE location and probe design). When the time comes, we will tag pertinent files in the current repo (see <a class="reference internal" href="#tagging"><em>Tagging</em></a>), and then move in the new bits.</li>
+<li>some of the methods/code within are likely confusing, particularly if you are trying to piece together what we did without actually reading the code. For the most part, we&#8217;ll try to give you some guidance, but you&#8217;ll also need to read the code. It may be helpful to enlist someone with knowledge of Python to aid this process.</li>
+</ol>
+</div>
+<div class="section" id="tagging">
+<span id="id3"></span><h2>Tagging<a class="headerlink" href="#tagging" title="Permalink to this headline">¶</a></h2>
+<p>Because code is a moving target, we have tagged particular commits that contain files of a certain vintage and/or purpose.  For instance, the <a class="reference external" href="http://github.com/baddna/seqcap/tree/v0.1">0.1</a> tag holds the initial version of the code that we use to search MAF files and run parallel blast jobs.  Subsequently, we updated these files to work more efficiently (e.g. the <a class="reference external" href="http://docs.python.org/library/multiprocessing.html">multiprocessing</a> module in place of <a class="reference external" href="http://www.parallelpython.com/">pp</a>).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#notes-on-the-code">Notes on the Code</a></li>
+<li><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
+<li><a class="reference internal" href="#tagging">Tagging</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to uce&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="next chapter">Data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/introduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to uce’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>
