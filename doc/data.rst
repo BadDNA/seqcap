@@ -11,20 +11,18 @@ uce_probe.sqlite.bz2
 
 This is a bzip archive of an sqlite database containing the data we used during our probe design process and the probes that results from this process.  The tables are:
 
-* **cons** - this table contains matches that we identified in alignments
+* ``cons`` - this table contains matches that we identified in alignments
   (`MAF <http://genome.ucsc.edu/FAQ/FAQformat#format5>`_) between chicken and
-  lizard using the initial version (0.1) of the `genome/summary.py`code in  
-  this repository (see "tags" below).
+  lizard using the initial version (0.1) of the `genome/summary.py`code in
+  this repository (see :ref:`tagging` below).
 
-* **blast** - this table contains results from a blast of the matches from      cons onto the zebra finch genome.  For these matches we used the 0.1 tagged `genome/summaryBlast.py` code
+* ``blast`` - this table contains results from a blast of the matches from cons onto the zebra finch genome.  For these matches we used the 0.1 tagged `genome/summaryBlast.py` code
 
-* **gallus_refseq** - this is a table of the refseq genes in galGal3.  it would
-  likely be best to download a recent version of these data from NCBI or UCSC
-  rather than using what is here for anything.
-
-* **probes** - this is a table of the probes that we designed from the UCEs we
+* ``gallus_refseq`` - this is a table of the refseq genes in galGal3.  it would likely be best to download a recent version of these data from NCBI or UCSC rather than using what is here for anything.
+    
+* ``probes`` - this is a table of the probes that we designed from the UCEs we
   located in chicken, lizard, and zebra finch.  We designed these probes using
-  `design/sure_select_tiler.py
+  `design/sure_select_tiler.py`
 
 uce_bed.bz2
 ==============
@@ -38,7 +36,7 @@ This is a `BED <http://genome.ucsc.edu/FAQ/FAQformat#format1>`_ format file of
 the locations of the probes we designed.  The locations within this file are
 relative to chicken (galGal3).
 
-probe_matches_to_other_genomes.sql.bz2
+db1.sql.bz2
 ==========================================
 
 This is a bzipped dump file of the `mysql <http://www.mysql.com/>`_ database 
