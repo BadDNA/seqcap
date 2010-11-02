@@ -1,10 +1,8 @@
-Phylo
-======
+Scripts:
+========
 
-Script Descriptions
-*******************
 
--  **bootstrap_locus_alignments.py**
+-  **``bootstrap_locus_alignments.py``**
 
    *Description:* This script creates bootstrap replicates of
    individual locus alignments using a two stage bootstrap method (Seo
@@ -26,18 +24,15 @@ Script Descriptions
 
    ::
 
-       >>> python bootstrap_locus_alignments.py --input-dir /some/dir/ \
-       --output-dir /some/out/dir --input-file-format nexus \
-       --output-file-format phylip --bootstrap-reps 500 --multi_out
+       >>> python bootstrap_locus_alignments.py --input-dir /some/dir/\
+        --output-dir /some/out/dir --input-file-format nexus\
+        --output-file-format phylip --bootstrap-reps 500 --multi_out
 
    Detailed information about the command line arguments may be
-   obtained by typing:
-   
-   ::
-   
-        >>> python bootstrap_locus_alignments.py --help
+   obtained by typing
+   ``>>> python bootstrap_locus_alignments.py --help``
 
--  **bootstrap_concat_alignments.py**
+-  **``bootstrap_concat_alignments.py``**
 
    *Description:* This script takes a single alignment and generates
    alignments bootstrapped and aligned position. It can handle large
@@ -50,18 +45,15 @@ Script Descriptions
 
    ::
 
-       >>> python bootstrap_concat_alignments --input-file /some/file.align \
-       --output-dir /some/out/dir --input-file-format nexus \  
-       --output-file-format phylip --bootstrap-reps 500
+       >>> python bootstrap_concat_alignments --input-file /some/file.align\
+        --output-dir /some/out/dir --input-file-format nexus\  
+        --output-file-format phylip --bootstrap-reps 500
 
    Detailed information about the command line arguments may be
-   obtained by typing:
-   
-   ::
-   
-        >>> python bootstrap_locus_alignments.py --help
+   obtained by typing
+   ``>>> python bootstrap_locus_alignments.py --help``
 
--  **execute_PhyML.py**
+-  **``execute_PhyML.py``**
 
    *Description:* This is a template for executing multiple PhyML jobs
    on an LSF cluster. Just modify the path and the command line as
@@ -69,7 +61,7 @@ Script Descriptions
    (e.g., iPython). Because every computer cluster is different, it is
    impossible to provide code that can be run everywhere.
 
--  **phybase.py**
+-  **``phybase.py``**
 
    *Description:* Script to run Phybase on a set of trees. Easier than
    loading R everytime.
@@ -81,25 +73,21 @@ Script Descriptions
 
    ::
 
-       >>> python phybase.py --input-file /some/file.trees \
-       --output-dir /some/out/dir --outgroup fish \
-       --taxa 'mouse human chimp etc'
+       >>> python phybase.py --input-file /some/file.trees\
+        --output-dir /some/out/dir --outgroup fish\
+        --taxa 'mouse human chimp etc'
 
    Detailed information about the command line arguments may be
-   obtained by typing: 
-   
-   ::
-   
-        >>> python phybase.py --help
+   obtained by typing ``>>> python phybase.py --help``
 
--  **phylo.py**
+-  **``phylo.py``**
 
    *Description:* A home brewed phylogenetic module. Required by some
    of the preceding scripts.
 
    *Requirements:* Python version 2.6 with module Numpy.
 
--  **get_mpest_format.py**
+-  **``get_mpest_format.py``**
 
    *Description:* Given directory or file input, read the contents of
    the either and root the trees within (using --root and --outgroup=
@@ -113,13 +101,13 @@ Script Descriptions
 
    ::
 
-       >>> python get_mpest_format.py --input=file_of_.trees \
-       --output=ouput.tree --root --outgroup=ASpeciesName --build-control
+       >>> python get_mpest_format.py --input=file_of_.trees\
+        --output=ouput.tree --root --outgroup=ASpeciesName --build-control
 
    Detailed information about the command line arguments may be
    obtained by typing ``>>> get_mpest_format.py --help``
 
--  **run_mpest.py**
+-  **``run_mpest.py``**
 
    *Description:* Run an input file through our slightly customized
    version of mpest either using a single core or multiple cores, and
@@ -132,10 +120,10 @@ Script Descriptions
 
    ::
 
-       >>> python run_mpest.py --control-file=903_loci_5_species_bats.control \
-       --iterations=1000 --cores=7 --output=903_loci_5_species_bats_mpest.tree
+       >>> python run_mpest.py --control-file=903_loci_5_species_bats.control\
+        --iterations=1000 --cores=7 --output=903_loci_5_species_bats_mpest.tree
 
--  **add_taxa_names_to_mpest.py**
+-  **``add_taxa_names_to_mpest.py``**
 
    *Description:* Adds human-readable labels to MP-EST output.
 
@@ -145,34 +133,33 @@ Script Descriptions
 
    ::
 
-       >>> python /n/home06/ngcrawford/data1/seqcap/Phylo/add_taxa_names_to_mpest.py \
-       --input=/path/dir/containing/trees/and/control/files
+       >>> python /n/home06/ngcrawford/data1/seqcap/Phylo/add_taxa_names_to_mpest.py\
+        --input=/path/dir/containing/trees/and/control/files
 
 
-Pipeline Examples
-*****************
-
+Methods:
+========
 
 **STEAC or STAR Trees:**
 
-    1.) Execute PhyML on each locus alignment using the template in
-    ``execute_PhyML.py``
+1.) Execute PhyML on each locus alignment using the template in
+``execute_PhyML.py``
 
-    2.) Run ``phybase.py`` on the gene trees to make the species tree
-    (STEC or STAR).
+2.) Run ``phybase.py`` on the gene trees to make the species tree
+(STEC or STAR).
 
 **Concatenated Alignment Boostrapping:**
 
-    1.) Generate bootstrapped alignments with
-    ``bootstrap_concat_alignments.py``
+1.) Generate bootstrapped alignments with
+``bootstrap_concat_alignments.py``
 
-    2.) Execute PhyML on each replicate using the template in
-    ``execute_PhyML.py``
+2.) Execute PhyML on each replicate using the template in
+``execute_PhyML.py``
 
-    3.) Concatenate the trees into a single file with the linux 'cat'
-    command.
+3.) Concatenate the trees into a single file with the linux 'cat'
+command.
 
-    ::
+::
 
         >>> cat *.tree > concat.trees
 
@@ -181,19 +168,19 @@ similar.
 
 **Per Locus Bootstrapping:**
 
-    1.) Generate bootstrapped alignments with
-    ``bootstrap_locus_alignments.py``
+1.) Generate bootstrapped alignments with
+``bootstrap_locus_alignments.py``
 
-    2.) Execute PhyML on each replicate using the template in
-    ``execute_PhyML.py``
+2.) Execute PhyML on each replicate using the template in
+``execute_PhyML.py``
 
-    3.) Run ``phybase.py`` on each set of gene trees to make the
-    species trees.
+3.) Run ``phybase.py`` on each set of gene trees to make the
+species trees.
 
-    4.) Concatenate the species trees into a single file with the linux
-    'cat' command.
+4.) Concatenate the species trees into a single file with the linux
+'cat' command.
 
-    ::
+::
 
         >>> cat star*.tree > all_star_species.trees
 
@@ -202,7 +189,9 @@ similar.
 
 **MP-EST Trees:**
 
-1. Single MP-EST tree from a collection of PhyML trees.
+1.) Single MP-EST tree from a collection of PhyML trees.
+
+::
 
     a.) Run get `get_mpest_format.py` on tree file.
     
@@ -210,15 +199,13 @@ similar.
     
     c.) Run `add_taxa_names_to_mpest.py` to added readable taxa names
     
-    d.) Concatenate output:
-     
-    ::
+    d.) Concatenate output e.g, `>>> cat *.mpest.named.trees > all_mpest_named_species.trees`
     
-        >>> cat *.mpest.named.trees > all_mpest_named_species.trees
-    
-    e.) Generate consensus tree in `PAUP <http://paup.csit.fsu.edu/>`_ and visualize with PAUP or `FigTree <http://tree.bio.ed.ac.uk/software/figtree/>`_
+    e.) Generate consensus tree in [PAUP](http://paup.csit.fsu.edu/) and visualize with PAUP or [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
 
-2. Bootstrap MP-EST trees from a collection of PhyML trees.
+2.) Bootstrap MP-EST trees from a collection of PhyML trees.
+
+::
 
     a.) Generate bootstrapped alignments with `bootstrap_locus_alignments.py`
     
@@ -226,11 +213,8 @@ similar.
     
     c.) Make control files using `get_mpest_format.py`
     
-    d.) Run MP-EST. I used the following PYTHON script on an `LSF <http://en.wikipedia.org/wiki/Platform_LSF>`_ cluster to automate the process:
+    d.) Run MP-EST. I used the following PYTHON script to automate the process:
     
-    
-    ::
-
             import os, glob, shlex, subprocess
             paths = glob.glob('/path/to/bootreps/*.control')
             for count, p in enumerate(paths):
@@ -250,10 +234,10 @@ similar.
     
     d.) Concatenate output e.g, `>>> cat *.mpest.named.trees > all_mpest_named_species.trees`
     
-    f.) Generate consensus tree in `PAUP <http://paup.csit.fsu.edu/>`_ and visualize with PAUP or `FigTree <http://tree.bio.ed.ac.uk/software/figtree/>`_
+    f.) Generate consensus tree in [PAUP](http://paup.csit.fsu.edu/) and visualize with PAUP or [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
 
-Citations
-*********
+Citations:
+==========
 
 Seo et al. Incorporating gene-specific variation when inferring and
 evaluating optimal evolutionary tree topologies from multilocus
