@@ -1,6 +1,8 @@
-Scripts
-========
+Phylo
+======
 
+Script Descriptions
+*******************
 
 -  **bootstrap_locus_alignments.py**
 
@@ -147,7 +149,7 @@ Scripts
        --input=/path/dir/containing/trees/and/control/files
 
 
-Example Pipeline:
+Pipeline Examples
 *****************
 
 
@@ -250,8 +252,8 @@ similar.
     
     f.) Generate consensus tree in `PAUP <http://paup.csit.fsu.edu/>`_ and visualize with PAUP or `FigTree <http://tree.bio.ed.ac.uk/software/figtree/>`_
 
-Citations:
-**********
+Citations
+*********
 
 Seo et al. Incorporating gene-specific variation when inferring and
 evaluating optimal evolutionary tree topologies from multilocus
