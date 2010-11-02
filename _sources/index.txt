@@ -3,23 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to uce's documentation!
+Documentation
 ===============================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    
    introduction.rst
    data.rst
-   workflow.rst
-   alignment.rst
-   clustering.rst
-   design.rst
-   genome.rst
-   lib.rst
-   phylo.rst
+   workflows.rst
+   programs.rst
    acknowledgements.rst
    references.rst
 

@@ -4,7 +4,7 @@
 Introduction
 ****************
 
-This `repository <http://github.com/baddna/seqcap>`_) holds computer code (and, temporarily, data) used as part of [McCormack:20??]_.
+This `repository <http://github.com/baddna/seqcap>`_ holds computer code (and, temporarily, data) used as part of [McCormack:20??]_.
 
 In essence, the software included within the repository are meant to:
 
@@ -17,6 +17,42 @@ In essence, the software included within the repository are meant to:
 #. generate the species trees from individual gene trees (using STAR, STEAC, or MP-EST)
 
 Because of the complex nature of the above steps, there are a number of independent and interdependent programs within this repository, that we hopefully better explain in :ref:`workflow`. The fruits of these programs labor are found in the `Downloads <http://github.com/BadDNA/seqcap/archives/master>`_ as described in the :ref:`data` section. Since many people are mostly interested in these data, we discuss these data first.
+
+.. _dependencies:
+
+Dependencies
+============
+
+Hardware Dependencies
+*********************
+
+For many of the programs within, you should at least have access to a multi-core computer with a sufficient amount of RAM (>8GB).  A number of the programs allow you to to parallelize jobs using the multiprocessing module of Python, and this provides and almost linear increase in processing speed.
+
+Additionally, several programs (particularly those within phylo/*) require access to a cluster-computing system.  We used a large cluster running the `LSF queuing system <http://www.platform.com/workload-management/high-performance-computing>`_.  
+
+Several of these programs cannot, realistically, be run on very small systems unless you have a very long time to wait.
+
+
+Software Dependencies
+*********************
+
+There are numerous software dependencies that you must satisfy if you wish to run all of the code contained within this repository.  These include:
+
+* A working `Kent Source tree < http://genome-source.cse.ucsc.edu/kent.git>`_.  In particular, you need the following binaries
+    * faFrag
+    * faToTwoBit
+    * ??
+* `Lastz <http://www.bx.psu.edu/~rsharris/lastz/>`_
+* `Muscle <http://www.drive5.com/muscle>`_
+* `PhyML <http://atgc.lirmm.fr/phyml/>`_
+* `MP-EST <http://github.com/brantfaircloth/mpest>`_ - we use a modified version of the `original code <http://mpest.googlecode.com>`_
+* Python > 2.6.x
+    * numpy
+    * bx-python
+    * biopython (> 1.54)
+    * oursql
+    * dendropy
+    * ??
 
 .. _notes_on_the_code:
 

@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,8 +7,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Workflows &mdash; uce v0.5 documentation</title>
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <title>3. Workflows &mdash; uce v0.5 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,7 +22,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="uce v0.5 documentation" href="index.html" /> 
+    <link rel="top" title="uce v0.5 documentation" href="index.html" />
+    <link rel="next" title="4. Acknowledgements" href="acknowledgements.html" />
+    <link rel="prev" title="2. Data" href="data.html" /> 
   </head>
   <body>
     <div class="related">
@@ -30,9 +33,78 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="acknowledgements.html" title="4. Acknowledgements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="2. Data"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. Workflows</a><ul>
+<li><a class="reference internal" href="#current-workflows">3.1. Current Workflows</a><ul>
+<li><a class="reference internal" href="#identifying-uce-regions">3.1.1. Identifying UCE regions</a><ul>
+<li><a class="reference internal" href="#convert-net-axt-files-to-maf">3.1.1.1. convert net.axt files to maf</a></li>
+<li><a class="reference internal" href="#locate-perfectly-conserved-repeat-regions">3.1.1.2. locate perfectly conserved repeat regions</a></li>
+<li><a class="reference internal" href="#pull-these-sequence-from-the-database">3.1.1.3. Pull these sequence from the database</a></li>
+<li><a class="reference internal" href="#locate-duplicate-matches-from-this-set">3.1.1.4. Locate duplicate matches from this set</a></li>
+<li><a class="reference internal" href="#flag-the-duplicate-matches-in-the-database">3.1.1.5. Flag the duplicate matches in the database</a></li>
+<li><a class="reference internal" href="#generate-a-fasta-file-from-these-sequences">3.1.1.6. Generate a fasta file from these sequences</a></li>
+<li><a class="reference internal" href="#align-the-fasta-reads-to-another-genome">3.1.1.7. Align the fasta reads to another genome</a></li>
+<li><a class="reference internal" href="#cleanup-output-lastz">3.1.1.8. Cleanup output.lastz</a></li>
+<li><a class="reference internal" href="#create-a-table-for-of-output-lastz-in-mysql">3.1.1.9. Create a table for of output.lastz in mysql</a></li>
+<li><a class="reference internal" href="#load-the-contents-of-output-lastz-clean-into-mysql">3.1.1.10. Load the contents of output.lastz.clean into mysql</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deprecated-workflows">3.2. Deprecated Workflows</a><ul>
+<li><a class="reference internal" href="#deprecated-identifying-uce-regions-v0-1">3.2.1. [Deprecated] Identifying UCE regions (v0.1)</a><ul>
+<li><a class="reference internal" href="#id1">3.2.1.1. convert net.axt files to maf</a></li>
+<li><a class="reference internal" href="#id2">3.2.1.2. locate perfectly conserved repeat regions</a></li>
+<li><a class="reference internal" href="#blast-perfectly-conserved-repeat-regions-against-another-genome">3.2.1.3. BLAST perfectly conserved repeat regions against another genome</a></li>
+<li><a class="reference internal" href="#flag-perfectly-duplicated-sequences-in-the-cons-table">3.2.1.4. Flag perfectly duplicated sequences in the <tt class="docutils literal"><span class="pre">cons</span></tt> table</a></li>
+<li><a class="reference internal" href="#get-the-non-duplicate-conserved-sequences-flank">3.2.1.5. Get the non-duplicate conserved sequences + flank</a></li>
+<li><a class="reference internal" href="#tile-probes-across-conserved-sequences-flanking-regions">3.2.1.6. Tile probes across conserved sequences + flanking regions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="previous chapter">2. Data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="acknowledgements.html"
+                        title="next chapter">4. Acknowledgements</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/workflows.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -40,15 +112,15 @@
           <div class="body">
             
   <div class="section" id="workflows">
-<span id="chap-workflow"></span><h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h1>
+<span id="chap-workflow"></span><h1>3. Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="current-workflows">
-<h2>Current Workflows<a class="headerlink" href="#current-workflows" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. Current Workflows<a class="headerlink" href="#current-workflows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="identifying-uce-regions">
-<h3>Identifying UCE regions<a class="headerlink" href="#identifying-uce-regions" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.1. Identifying UCE regions<a class="headerlink" href="#identifying-uce-regions" title="Permalink to this headline">¶</a></h3>
 <p>The current workflow that we use for identifying UCE regions between organisms is as follows:</p>
 <img alt="_images/uce_iden_current_workflow.png" src="_images/uce_iden_current_workflow.png" />
 <div class="section" id="convert-net-axt-files-to-maf">
-<h4>convert net.axt files to maf<a class="headerlink" href="#convert-net-axt-files-to-maf" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.1. convert net.axt files to maf<a class="headerlink" href="#convert-net-axt-files-to-maf" title="Permalink to this headline">¶</a></h4>
 <p>First, we want to convert our target.query.net.axt files (from UCSC) to MAF formatted files:</p>
 <div class="highlight-bash"><div class="highlight"><pre>axtToMaf ~/Data/alignments/target.query/target.query.net.axt <span class="se">\</span>
    ~/Data/genomes/target/target.sizes <span class="se">\</span>
@@ -59,7 +131,7 @@
 </div>
 </div>
 <div class="section" id="locate-perfectly-conserved-repeat-regions">
-<h4>locate perfectly conserved repeat regions<a class="headerlink" href="#locate-perfectly-conserved-repeat-regions" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.2. locate perfectly conserved repeat regions<a class="headerlink" href="#locate-perfectly-conserved-repeat-regions" title="Permalink to this headline">¶</a></h4>
 <p>Then, we want to scan these MAF formatted files to find blocks of perfectly conserved elements, of user-selectable size:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python genome/summary.py <span class="se">\</span>
    --configuration<span class="o">=</span>db.conf <span class="se">\</span>
@@ -90,7 +162,7 @@
 </ul>
 </div>
 <div class="section" id="pull-these-sequence-from-the-database">
-<h4>Pull these sequence from the database<a class="headerlink" href="#pull-these-sequence-from-the-database" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.3. Pull these sequence from the database<a class="headerlink" href="#pull-these-sequence-from-the-database" title="Permalink to this headline">¶</a></h4>
 <p>We need to search these matches for those reads that match in more than one location.  Before doing that, we need to pull sequences from the database of whatever length in which we are interested:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python get_conserved_sequence.py <span class="se">\</span>
     --configuration<span class="o">=</span>db.conf <span class="se">\</span>
@@ -106,7 +178,7 @@
 </ul>
 </div>
 <div class="section" id="locate-duplicate-matches-from-this-set">
-<h4>Locate duplicate matches from this set<a class="headerlink" href="#locate-duplicate-matches-from-this-set" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.4. Locate duplicate matches from this set<a class="headerlink" href="#locate-duplicate-matches-from-this-set" title="Permalink to this headline">¶</a></h4>
 <p>We may have inadvertently grabbed UCEs that are duplicated in the genomes we are using.  We need to search for and avoid these duplicates.  First, convert the fasta file from above into a 2bit file (requires fastaToTwoBit from Kent Source - also optional... lastz takes fasta files as input):</p>
 <div class="highlight-bash"><div class="highlight"><pre>faToTwoBit sequences.fa sequences.2bit
 </pre></div>
@@ -123,7 +195,7 @@
 <p><tt class="docutils literal"><span class="pre">easy_lastz.py</span></tt> differs from <tt class="docutils literal"><span class="pre">run_lastz.py</span></tt> in that <tt class="docutils literal"><span class="pre">easy_lastz.py</span></tt> is a single-processor wrapper around lastz, while <tt class="docutils literal"><span class="pre">run_last.py</span></tt> is meant for multiprocessing.  For the purpose here, <tt class="docutils literal"><span class="pre">easy_lastz.py</span></tt> is a better choice because the data set we are processing is small, and multiprocessing would likely be slower due to the overhead of the additional calls involved.</p>
 </div>
 <div class="section" id="flag-the-duplicate-matches-in-the-database">
-<h4>Flag the duplicate matches in the database<a class="headerlink" href="#flag-the-duplicate-matches-in-the-database" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.5. Flag the duplicate matches in the database<a class="headerlink" href="#flag-the-duplicate-matches-in-the-database" title="Permalink to this headline">¶</a></h4>
 <p>Remove the duplicates (was remove_fish_cons_duplicates.py) by flipping the duplicate flag to 1 in the database table:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python flag_cons_duplicates.py <span class="se">\</span>
    --configuration<span class="o">=</span>db.conf <span class="se">\</span>
@@ -133,7 +205,7 @@
 <p>These will be avoided by subsequent calls to <tt class="docutils literal"><span class="pre">get_conserved_sequence.py</span></tt>.</p>
 </div>
 <div class="section" id="generate-a-fasta-file-from-these-sequences">
-<h4>Generate a fasta file from these sequences<a class="headerlink" href="#generate-a-fasta-file-from-these-sequences" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.6. Generate a fasta file from these sequences<a class="headerlink" href="#generate-a-fasta-file-from-these-sequences" title="Permalink to this headline">¶</a></h4>
 <p>After removing duplicates, we will create a fasta file of these conserved reads.  The following pulls all conserved regions from the database that are longer than 80 bp, buffers them up to 180 base pairs (by adding 45 bp to the 5&#8217; and 3&#8217; flanks), and outputs the data to output.fa:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python genome/get_conserved_sequence.py <span class="se">\</span>
     --configuration<span class="o">=</span>db.conf <span class="se">\</span>
@@ -151,7 +223,7 @@
 </ul>
 </div>
 <div class="section" id="align-the-fasta-reads-to-another-genome">
-<h4>Align the fasta reads to another genome<a class="headerlink" href="#align-the-fasta-reads-to-another-genome" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.7. Align the fasta reads to another genome<a class="headerlink" href="#align-the-fasta-reads-to-another-genome" title="Permalink to this headline">¶</a></h4>
 <p>The purpose here is to find the conserved regions initially located between two species in a third species.  In comparison to previous versions of this workflow, we use lastz for this task, in place of BLAST (due to speed).</p>
 <p>First, convert the fasta file to a 2bit file [optional]:</p>
 <div class="highlight-bash"><div class="highlight"><pre>faToTwoBit output.fa output.2bit
@@ -179,14 +251,14 @@
 </ul>
 </div>
 <div class="section" id="cleanup-output-lastz">
-<h4>Cleanup output.lastz<a class="headerlink" href="#cleanup-output-lastz" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.8. Cleanup output.lastz<a class="headerlink" href="#cleanup-output-lastz" title="Permalink to this headline">¶</a></h4>
 <p>Replace the percent signs in the output file, in preparation for loading into the database:</p>
 <div class="highlight-bash"><div class="highlight"><pre>sed <span class="s1">&#39;s/%//g&#39;</span> /file/in/which/to/save/output.lastz &gt; /file/in/which/to/save/output.lastz.clean
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-table-for-of-output-lastz-in-mysql">
-<h4>Create a table for of output.lastz in mysql<a class="headerlink" href="#create-a-table-for-of-output-lastz-in-mysql" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.9. Create a table for of output.lastz in mysql<a class="headerlink" href="#create-a-table-for-of-output-lastz-in-mysql" title="Permalink to this headline">¶</a></h4>
 <p>Bring the contents of output.lastz.clean into a mysql table</p>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">create</span> <span class="k">table</span> <span class="n">conserved</span> <span class="p">(</span>
     <span class="n">id</span> <span class="n">mediumint</span> <span class="n">unsigned</span> <span class="k">not</span> <span class="k">null</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
@@ -216,7 +288,7 @@
 </div>
 </div>
 <div class="section" id="load-the-contents-of-output-lastz-clean-into-mysql">
-<h4>Load the contents of output.lastz.clean into mysql<a class="headerlink" href="#load-the-contents-of-output-lastz-clean-into-mysql" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.1.10. Load the contents of output.lastz.clean into mysql<a class="headerlink" href="#load-the-contents-of-output-lastz-clean-into-mysql" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">LOAD</span> <span class="k">DATA</span> <span class="n">INFILE</span> <span class="s1">&#39;output.lastz.clean&#39;</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">conserved</span> <span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">name1</span><span class="p">,</span>
 <span class="n">strand1</span><span class="p">,</span> <span class="n">zstart1</span><span class="p">,</span> <span class="n">end1</span><span class="p">,</span> <span class="n">length1</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">strand2</span><span class="p">,</span> <span class="n">zstart2</span><span class="p">,</span> <span class="n">end2</span><span class="p">,</span> <span class="n">length2</span><span class="p">,</span>
 <span class="n">diff</span><span class="p">,</span> <span class="n">cigar</span><span class="p">,</span> <span class="k">identity</span><span class="p">,</span> <span class="n">percent_identity</span><span class="p">,</span> <span class="n">continuity</span><span class="p">,</span> <span class="n">percent_continuity</span><span class="p">,</span>
@@ -228,14 +300,14 @@
 </div>
 </div>
 <div class="section" id="deprecated-workflows">
-<h2>Deprecated Workflows<a class="headerlink" href="#deprecated-workflows" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. Deprecated Workflows<a class="headerlink" href="#deprecated-workflows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="deprecated-identifying-uce-regions-v0-1">
-<h3>[Deprecated] Identifying UCE regions (v0.1)<a class="headerlink" href="#deprecated-identifying-uce-regions-v0-1" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.1. [Deprecated] Identifying UCE regions (v0.1)<a class="headerlink" href="#deprecated-identifying-uce-regions-v0-1" title="Permalink to this headline">¶</a></h3>
 <p>The older workflow that we used for identifying UCE regions between organisms was as follows:</p>
 <img alt="_images/uce_iden_initial_workflow.png" src="_images/uce_iden_initial_workflow.png" />
 <p>The older workflow depended on the <tt class="docutils literal"><span class="pre">pp</span></tt> and <tt class="docutils literal"><span class="pre">sqlite3</span></tt> modules of python.  As you can see above, we have since ported the code to use mysql as the backend while also using the <tt class="docutils literal"><span class="pre">multiprocessing</span></tt> module in place of <tt class="docutils literal"><span class="pre">pp</span></tt>.</p>
 <div class="section" id="id1">
-<h4>convert net.axt files to maf<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.1. convert net.axt files to maf<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>First, we want to convert our target.query.net.axt files (from UCSC) to MAF formatted files:</p>
 <div class="highlight-bash"><div class="highlight"><pre>axtToMaf ~/Data/alignments/target.query/target.query.net.axt <span class="se">\</span>
    ~/Data/genomes/target/target.sizes <span class="se">\</span>
@@ -246,7 +318,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h4>locate perfectly conserved repeat regions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.2. locate perfectly conserved repeat regions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Then, we want to scan these MAF formatted files to find blocks of perfectly conserved elements, of user-selectable size:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python genome/summary.py
 </pre></div>
@@ -270,7 +342,7 @@
 </div>
 </div>
 <div class="section" id="blast-perfectly-conserved-repeat-regions-against-another-genome">
-<h4>BLAST perfectly conserved repeat regions against another genome<a class="headerlink" href="#blast-perfectly-conserved-repeat-regions-against-another-genome" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.3. BLAST perfectly conserved repeat regions against another genome<a class="headerlink" href="#blast-perfectly-conserved-repeat-regions-against-another-genome" title="Permalink to this headline">¶</a></h4>
 <p>We now need to scan the conserved sequences we&#8217;ve located against an additional genome to validate:</p>
 <div class="highlight-bash"><div class="highlight"><pre>python genome/summaryBlast.py
 </pre></div>
@@ -290,20 +362,20 @@
 </div>
 </div>
 <div class="section" id="flag-perfectly-duplicated-sequences-in-the-cons-table">
-<h4>Flag perfectly duplicated sequences in the <tt class="docutils literal"><span class="pre">cons</span></tt> table<a class="headerlink" href="#flag-perfectly-duplicated-sequences-in-the-cons-table" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.4. Flag perfectly duplicated sequences in the <tt class="docutils literal"><span class="pre">cons</span></tt> table<a class="headerlink" href="#flag-perfectly-duplicated-sequences-in-the-cons-table" title="Permalink to this headline">¶</a></h4>
 <p>After identifying conserved sequence present in a trio of species, we need to flag the perfectly duplicated reads in the <tt class="docutils literal"><span class="pre">cons</span></tt> table.</p>
 <blockquote>
 python duplicateFinder.py</blockquote>
 </div>
 <div class="section" id="get-the-non-duplicate-conserved-sequences-flank">
-<h4>Get the non-duplicate conserved sequences + flank<a class="headerlink" href="#get-the-non-duplicate-conserved-sequences-flank" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.5. Get the non-duplicate conserved sequences + flank<a class="headerlink" href="#get-the-non-duplicate-conserved-sequences-flank" title="Permalink to this headline">¶</a></h4>
 <p>After filtering out duplicates (using a flag), we need to get the conserved reads out of the database.  Because some of them are shorter than 120 bp, we will buffer those that are shorter than 120 bp up to 120 bp by adding sequence to the 5&#8217; and 3&#8217; ends (from the target genome we started with):</p>
 <div class="highlight-bash"><div class="highlight"><pre>python sureSelectSequenceBuffer.py
 </pre></div>
 </div>
 </div>
 <div class="section" id="tile-probes-across-conserved-sequences-flanking-regions">
-<h4>Tile probes across conserved sequences + flanking regions<a class="headerlink" href="#tile-probes-across-conserved-sequences-flanking-regions" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.6. Tile probes across conserved sequences + flanking regions<a class="headerlink" href="#tile-probes-across-conserved-sequences-flanking-regions" title="Permalink to this headline">¶</a></h4>
 <p>Feed this file to sureSelectTiler.py, which does the tiling, the counting of masked bases, GC content determination, blasting of probes to themselves, etc. the output of which goes into a csv file.</p>
 <p>this file gets imported to the db, and then we run sureSelectSeqName.py on the dbase table (sureselect) that is created after importing the csv file as a table above.</p>
 <p>Then ran sureSelectSeqName.py to get sureselect probes into dbase and add metadata.</p>
@@ -316,63 +388,6 @@ python duplicateFinder.py</blockquote>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Workflows</a><ul>
-<li><a class="reference internal" href="#current-workflows">Current Workflows</a><ul>
-<li><a class="reference internal" href="#identifying-uce-regions">Identifying UCE regions</a><ul>
-<li><a class="reference internal" href="#convert-net-axt-files-to-maf">convert net.axt files to maf</a></li>
-<li><a class="reference internal" href="#locate-perfectly-conserved-repeat-regions">locate perfectly conserved repeat regions</a></li>
-<li><a class="reference internal" href="#pull-these-sequence-from-the-database">Pull these sequence from the database</a></li>
-<li><a class="reference internal" href="#locate-duplicate-matches-from-this-set">Locate duplicate matches from this set</a></li>
-<li><a class="reference internal" href="#flag-the-duplicate-matches-in-the-database">Flag the duplicate matches in the database</a></li>
-<li><a class="reference internal" href="#generate-a-fasta-file-from-these-sequences">Generate a fasta file from these sequences</a></li>
-<li><a class="reference internal" href="#align-the-fasta-reads-to-another-genome">Align the fasta reads to another genome</a></li>
-<li><a class="reference internal" href="#cleanup-output-lastz">Cleanup output.lastz</a></li>
-<li><a class="reference internal" href="#create-a-table-for-of-output-lastz-in-mysql">Create a table for of output.lastz in mysql</a></li>
-<li><a class="reference internal" href="#load-the-contents-of-output-lastz-clean-into-mysql">Load the contents of output.lastz.clean into mysql</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#deprecated-workflows">Deprecated Workflows</a><ul>
-<li><a class="reference internal" href="#deprecated-identifying-uce-regions-v0-1">[Deprecated] Identifying UCE regions (v0.1)</a><ul>
-<li><a class="reference internal" href="#id1">convert net.axt files to maf</a></li>
-<li><a class="reference internal" href="#id2">locate perfectly conserved repeat regions</a></li>
-<li><a class="reference internal" href="#blast-perfectly-conserved-repeat-regions-against-another-genome">BLAST perfectly conserved repeat regions against another genome</a></li>
-<li><a class="reference internal" href="#flag-perfectly-duplicated-sequences-in-the-cons-table">Flag perfectly duplicated sequences in the <tt class="docutils literal"><span class="pre">cons</span></tt> table</a></li>
-<li><a class="reference internal" href="#get-the-non-duplicate-conserved-sequences-flank">Get the non-duplicate conserved sequences + flank</a></li>
-<li><a class="reference internal" href="#tile-probes-across-conserved-sequences-flanking-regions">Tile probes across conserved sequences + flanking regions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/workflow.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -381,12 +396,17 @@ python duplicateFinder.py</blockquote>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="acknowledgements.html" title="4. Acknowledgements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="2. Data"
+             >previous</a> |</li>
         <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.
-    <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.  Licensed under Creative Commons Attribution 3.0 Unported License.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
   </body>

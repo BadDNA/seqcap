@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,8 +7,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Data &mdash; uce v0.5 documentation</title>
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <title>2. Data &mdash; uce v0.5 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -22,8 +23,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="uce v0.5 documentation" href="index.html" />
-    <link rel="next" title="Workflow" href="workflow.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" /> 
+    <link rel="next" title="3. Workflows" href="workflows.html" />
+    <link rel="prev" title="1. Introduction" href="introduction.html" /> 
   </head>
   <body>
     <div class="related">
@@ -33,14 +34,57 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="workflow.html" title="Workflow"
+          <a href="workflows.html" title="3. Workflows"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="introduction.html" title="Introduction"
+          <a href="introduction.html" title="1. Introduction"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. Data</a><ul>
+<li><a class="reference internal" href="#uce-probe-sqlite-bz2">2.1. uce_probe.sqlite.bz2</a></li>
+<li><a class="reference internal" href="#uce-bed-bz2">2.2. uce_bed.bz2</a></li>
+<li><a class="reference internal" href="#uce-probes-bed-bz2">2.3. uce_probes.bed.bz2</a></li>
+<li><a class="reference internal" href="#db1-sql-bz2">2.4. db1.sql.bz2</a><ul>
+<li><a class="reference internal" href="#group-data-tables">2.4.1. group data tables</a></li>
+<li><a class="reference internal" href="#probe-matches-to-individual-species">2.4.2. probe matches to individual species</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">1. Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="workflows.html"
+                        title="next chapter">3. Workflows</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/data.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -48,44 +92,42 @@
           <div class="body">
             
   <div class="section" id="data">
-<span id="id1"></span><h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>2. Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
 <p>We make a number of data files available (temporarily) on this site.  The data files are as follows.</p>
 <div class="section" id="uce-probe-sqlite-bz2">
-<h2>uce_probe.sqlite.bz2<a class="headerlink" href="#uce-probe-sqlite-bz2" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. uce_probe.sqlite.bz2<a class="headerlink" href="#uce-probe-sqlite-bz2" title="Permalink to this headline">¶</a></h2>
 <p>This is a bzip archive of an sqlite database containing the data we used during our probe design process and the probes that results from this process.  The tables are:</p>
 <ul class="simple">
-<li><strong>cons</strong> - this table contains matches that we identified in alignments
+<li><tt class="docutils literal"><span class="pre">cons</span></tt> - this table contains matches that we identified in alignments
 (<a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format5">MAF</a>) between chicken and
-lizard using the initial version (0.1) of the <a href="#id2"><span class="problematic" id="id3">`</span></a>genome/summary.py`code in
-this repository (see &#8220;tags&#8221; below).</li>
-<li><strong>blast</strong> - this table contains results from a blast of the matches from      cons onto the zebra finch genome.  For these matches we used the 0.1 tagged <cite>genome/summaryBlast.py</cite> code</li>
-<li><strong>gallus_refseq</strong> - this is a table of the refseq genes in galGal3.  it would
-likely be best to download a recent version of these data from NCBI or UCSC
-rather than using what is here for anything.</li>
-<li><strong>probes</strong> - this is a table of the probes that we designed from the UCEs we
+lizard using the initial version (0.1) of the <cite>genome/summary.py`code in
+this repository (see :ref:`tagging</cite> below).</li>
+<li><tt class="docutils literal"><span class="pre">blast</span></tt> - this table contains results from a blast of the matches from cons onto the zebra finch genome.  For these matches we used the 0.1 tagged <cite>genome/summaryBlast.py</cite> code</li>
+<li><tt class="docutils literal"><span class="pre">gallus_refseq</span></tt> - this is a table of the refseq genes in galGal3.  it would likely be best to download a recent version of these data from NCBI or UCSC rather than using what is here for anything.</li>
+<li><tt class="docutils literal"><span class="pre">probes</span></tt> - this is a table of the probes that we designed from the UCEs we
 located in chicken, lizard, and zebra finch.  We designed these probes using
-<a href="#id4"><span class="problematic" id="id5">`</span></a>design/sure_select_tiler.py</li>
+<cite>design/sure_select_tiler.py</cite></li>
 </ul>
 </div>
 <div class="section" id="uce-bed-bz2">
-<h2>uce_bed.bz2<a class="headerlink" href="#uce-bed-bz2" title="Permalink to this headline">¶</a></h2>
+<h2>2.2. uce_bed.bz2<a class="headerlink" href="#uce-bed-bz2" title="Permalink to this headline">¶</a></h2>
 <p>This is a <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format1">BED</a> format file of the UCEs we located that are shared between chicken, lizard, and zebra finch. The locations within this file are relative to chicken (galGal3).</p>
 </div>
 <div class="section" id="uce-probes-bed-bz2">
-<h2>uce_probes.bed.bz2<a class="headerlink" href="#uce-probes-bed-bz2" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. uce_probes.bed.bz2<a class="headerlink" href="#uce-probes-bed-bz2" title="Permalink to this headline">¶</a></h2>
 <p>This is a <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat#format1">BED</a> format file of
 the locations of the probes we designed.  The locations within this file are
 relative to chicken (galGal3).</p>
 </div>
-<div class="section" id="probe-matches-to-other-genomes-sql-bz2">
-<h2>probe_matches_to_other_genomes.sql.bz2<a class="headerlink" href="#probe-matches-to-other-genomes-sql-bz2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="db1-sql-bz2">
+<h2>2.4. db1.sql.bz2<a class="headerlink" href="#db1-sql-bz2" title="Permalink to this headline">¶</a></h2>
 <p>This is a bzipped dump file of the <a class="reference external" href="http://www.mysql.com/">mysql</a> database
 in which we stored our alignments of each probe sequence to other genomes.
 Initially and for error checking purposes, we conducted the align, clean, and
 insert steps by hand (as seen in <em class="xref std std-ref">Simulation:steps</em>).  This process has
 now largely been automated in <em class="xref std std-ref">future:run_mutiple_lastz.py</em>.  The tables are:</p>
 <div class="section" id="group-data-tables">
-<span id="id7"></span><h3>group data tables<a class="headerlink" href="#group-data-tables" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>2.4.1. group data tables<a class="headerlink" href="#group-data-tables" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><cite>all_orgs</cite> - this table contains data from all of the matches to individual
 species listed in <a class="reference internal" href="#individual-species"><em>probe matches to individual species</em></a></p>
@@ -308,7 +350,7 @@ uce_probe.sqlite</p>
 </ul>
 </div>
 <div class="section" id="probe-matches-to-individual-species">
-<span id="individual-species"></span><h3>probe matches to individual species<a class="headerlink" href="#probe-matches-to-individual-species" title="Permalink to this headline">¶</a></h3>
+<span id="individual-species"></span><h3>2.4.2. probe matches to individual species<a class="headerlink" href="#probe-matches-to-individual-species" title="Permalink to this headline">¶</a></h3>
 <p>These tables provide the individual matches of probes to difference organisms, as found by using lastz to align our probe sequences to the individual genomes.  We provide the build version, name, etc. of each genome sequence in the <em>species</em> table of the database dump described in <a class="reference internal" href="#group-data-tables"><em>group data tables</em></a>.</p>
 <ul class="simple">
 <li><cite>ailMel1</cite></li>
@@ -367,49 +409,6 @@ uce_probe.sqlite</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Data</a><ul>
-<li><a class="reference internal" href="#uce-probe-sqlite-bz2">uce_probe.sqlite.bz2</a></li>
-<li><a class="reference internal" href="#uce-bed-bz2">uce_bed.bz2</a></li>
-<li><a class="reference internal" href="#uce-probes-bed-bz2">uce_probes.bed.bz2</a></li>
-<li><a class="reference internal" href="#probe-matches-to-other-genomes-sql-bz2">probe_matches_to_other_genomes.sql.bz2</a><ul>
-<li><a class="reference internal" href="#group-data-tables">group data tables</a></li>
-<li><a class="reference internal" href="#probe-matches-to-individual-species">probe matches to individual species</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="introduction.html"
-                        title="previous chapter">Introduction</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="workflow.html"
-                        title="next chapter">Workflow</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/data.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -419,17 +418,16 @@ uce_probe.sqlite</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="workflow.html" title="Workflow"
+          <a href="workflows.html" title="3. Workflows"
              >next</a> |</li>
         <li class="right" >
-          <a href="introduction.html" title="Introduction"
+          <a href="introduction.html" title="1. Introduction"
              >previous</a> |</li>
         <li><a href="index.html">uce v0.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.
-    <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+        &copy; Copyright 2010, Brant Faircloth and Nick Crawford.  Licensed under Creative Commons Attribution 3.0 Unported License.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
   </body>
