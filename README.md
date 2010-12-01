@@ -1,3 +1,5 @@
+**Please note, we are in the process of increasing the documentation and cleanliness of the code herein.  If you find something missing, please contact one of the committers (brant faircloth or nick crawford).**
+
 This repository holds computer code (and, temporarily, data) used as part of
 McCormack et al. XXXX.
 
