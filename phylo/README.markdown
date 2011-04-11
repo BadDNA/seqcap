@@ -124,7 +124,7 @@ Methods:
 4.) Generate a consensus tree on the species trees with PAUP or similar.
 
 
-**Per Locus Bootstrapping:**
+**Per Locus Bootstrapping: without models (e.g., all trees HKY)**
 
 1.) Generate bootstrapped alignments with `bootstrap_locus_alignments.py`
 
@@ -136,7 +136,37 @@ Methods:
 
         >>> cat star*.tree > all_star_species.trees
 
-5.) Generate a consensus tree on the species trees with PAUP or similar. 
+5.) Generate a consensus tree on the concatenated species trees with PAUP or similar.
+
+**Per Locus Bootstrapping: with models ()**
+
+1.) Create a directory with each locus in its own separate phylip file.
+
+2.) Use our modified version of [mraic](http://www.abc.se/~nylander/) (= `mraic_mod.pl`) in combination with
+PhyML to identify the best model for each locus.
+
+
+3.) Create a file of mraic output file names using the `ls` linux command:
+
+        >>> ls *.tre > mraic_trees.txt
+
+4.) Run bootstrap_locus_alignments.py on each set of locus trees using the 
+mraic tree file names. This will produce a lot of bootstrap directories. As
+the code is currently written this will only run on an lsf cluster.  *I need
+to modify this - NGC*
+
+5.) Run `phybase.py` on each bootstrap replicate to make the species trees.
+
+6.) Concatenate the species trees into a single file with the linux 'cat' command.
+First `cd` to the directory that contains all the bootstrap replicate directories.
+Then type this command to concatenate the trees:
+
+        >>> cat bootrep_*/*star.tree > star.trees
+
+You can modify this command with additional wildcard symbols `*` if you've ran
+different information criterions (e.g., AIC, AICc, or BIC).
+
+7.) Generate a consensus tree on the concatenated species trees with PAUP or similar.
 
 **MP-EST Trees:**
 
@@ -183,9 +213,6 @@ Methods:
     
     f.) Generate consensus tree in [PAUP](http://paup.csit.fsu.edu/) and visualize with PAUP or [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
     
-    
-    
-
 
 Citations:
 ==========
